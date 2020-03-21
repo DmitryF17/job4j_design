@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="6.11.2">
-<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\kiss\MaxMin.java">
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru.job4j.kiss\MaxMin.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\test\java\kiss\MaxMinTest.java">
 </file>
 </checkstyle>
