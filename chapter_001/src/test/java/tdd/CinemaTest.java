@@ -36,5 +36,20 @@ public class CinemaTest {
         cinema.add(new Session3D());
         assertThat(session, is(Arrays.asList(new Session3D())));
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void whenExceptionRow() {
+        Account account = new AccountCinema();
+        Calendar date = Calendar.getInstance();
+        date.set(2020, 10, 10, 23, 00);
+        Ticket ticket = new Cinema3D().buy(account, 0, 1, date);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void findNotSession() {
+        Cinema cinema = new Cinema3D();
+        List<Session> sessions = cinema.find(session -> true);
+    }
 }
+
 
