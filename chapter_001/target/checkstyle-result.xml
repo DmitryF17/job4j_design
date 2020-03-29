@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="6.11.2">
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\design\rsp\Employer.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\design\rsp\MemStore.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\design\rsp\ReportEngine.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\design\rsp\Store.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\tdd\Account.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\tdd\AccountCinema.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\tdd\Cinema.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\tdd\Cinema3D.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\tdd\Session.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\tdd\Session3D.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\tdd\Ticket.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\tdd\Ticket3D.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\template\Generator.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\template\GeneratorR.java">
+</file>
 <file name="C:\projects\job4j_design\chapter_001\src\main\java\ru.job4j.kiss\MaxMin.java">
 </file>
 <file name="C:\projects\job4j_design\chapter_001\src\test\java\kiss\MaxMinTest.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\test\java\ru\job4j\design\rsp\ReportEngineTest.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\test\java\ru\job4j\tdd\CinemaTest.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\test\java\template\TemplateTest.java">
 </file>
 </checkstyle>
