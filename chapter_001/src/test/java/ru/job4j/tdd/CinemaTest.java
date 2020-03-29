@@ -1,14 +1,14 @@
-package tdd;
+package ru.job4j.tdd;
 
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 import org.junit.Test;
-import ru.job4j.tdd.*;
 
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class CinemaTest {
 
@@ -45,7 +45,7 @@ public class CinemaTest {
         Ticket ticket = new Cinema3D().buy(account, 0, 1, date);
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test(expected = NoSuchElementException.class)
     public void findNotSession() {
         Cinema cinema = new Cinema3D();
         List<Session> sessions = cinema.find(session -> true);
