@@ -1,8 +1,6 @@
 package ru.job4j.io;
 
 import java.io.FileOutputStream;
-import java.util.Arrays;
-
 /**
  * Package for IO task.
  *
@@ -11,8 +9,6 @@ import java.util.Arrays;
  * @since 31.03.2020.
  */
 public class Multiple {
-    private static int[][] table;
-
     /**
      * Metod multiplication
      *
@@ -30,8 +26,6 @@ public class Multiple {
             }
             expect.append(System.lineSeparator());
         }
-
-
         return expect.toString();
     }
 
