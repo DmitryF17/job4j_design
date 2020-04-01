@@ -1,4 +1,4 @@
-package template;
+package ru.job4j.template;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,7 +6,6 @@ import java.util.NoSuchElementException;
 import org.hamcrest.core.Is;
 import org.junit.Assert;
 import org.junit.Test;
-import ru.job4j.template.GeneratorR;
 
 public class TemplateTest {
     public TemplateTest() {

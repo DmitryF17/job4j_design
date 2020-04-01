@@ -1,4 +1,4 @@
-package kiss;
+package ru.job4j.kiss;
 
 import org.junit.Test;
 
@@ -6,8 +6,6 @@ import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
-
-import ru.job4j.kiss.MaxMin;
 
 public class MaxMinTest {
     static List<Integer> value = List.of(10, 20, 50, 15, 35, 75, 5);

@@ -73,3 +73,6 @@ jrebel.lic
 build
 .gradle
 *.pid
+/chapter_001/
+/even.txt
+/input.txt

@@ -8,6 +8,12 @@
 </file>
 <file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\design\rsp\Store.java">
 </file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\io\Multiple.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\io\ResultFile.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\kiss\MaxMin.java">
+</file>
 <file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\tdd\Account.java">
 </file>
 <file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\tdd\AccountCinema.java">
@@ -28,14 +34,12 @@
 </file>
 <file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\template\GeneratorR.java">
 </file>
-<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru.job4j.kiss\MaxMin.java">
-</file>
-<file name="C:\projects\job4j_design\chapter_001\src\test\java\kiss\MaxMinTest.java">
-</file>
 <file name="C:\projects\job4j_design\chapter_001\src\test\java\ru\job4j\design\rsp\ReportEngineTest.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\test\java\ru\job4j\kiss\MaxMinTest.java">
 </file>
 <file name="C:\projects\job4j_design\chapter_001\src\test\java\ru\job4j\tdd\CinemaTest.java">
 </file>
-<file name="C:\projects\job4j_design\chapter_001\src\test\java\template\TemplateTest.java">
+<file name="C:\projects\job4j_design\chapter_001\src\test\java\ru\job4j\template\TemplateTest.java">
 </file>
 </checkstyle>
