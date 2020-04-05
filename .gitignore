@@ -13,8 +13,6 @@ config/database.yml
 log/*
 tmp/*
 
-# java specific
-*.class
 
 # python specific
 *.pyc
@@ -73,6 +71,6 @@ jrebel.lic
 build
 .gradle
 *.pid
-/chapter_001/
 /even.txt
 /input.txt
+/log.txt
