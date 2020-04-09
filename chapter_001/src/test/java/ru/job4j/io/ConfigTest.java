@@ -9,8 +9,9 @@ public class ConfigTest {
 
     @Test
     public void loadTest() {
-        Config config = new Config("./data/app.properties");
-        config.load("hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect");
+        String path = "./data/app.properties";
+        Config config = new Config(path);
+        config.load();
         assertThat(
                 config.value("hibernate.dialect"),
                 is("org.hibernate.dialect.PostgreSQLDialect")
