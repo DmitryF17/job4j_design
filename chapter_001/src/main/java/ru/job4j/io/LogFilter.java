@@ -21,7 +21,6 @@ public class LogFilter {
      * @return null.
      */
     public static List<String> filter(String file) {
-        List<String> lines = new ArrayList<>();
         List<String> res = new ArrayList<>();
         try (BufferedReader in = new BufferedReader(new FileReader(file))) {
             while (in.ready()) {
