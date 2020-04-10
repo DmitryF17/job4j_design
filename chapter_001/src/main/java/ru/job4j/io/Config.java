@@ -27,7 +27,7 @@ public class Config {
         try (BufferedReader read = new BufferedReader(new FileReader(this.path))) {
             while (read.ready()) {
                 String res = read.readLine();
-                if (res.contains("=")) {
+                if (res.contains("=") & !res.startsWith("#")) {
                     String[] splitLine = res.split("=");
                     values.put((splitLine[0]), splitLine[1]);
                 }
@@ -60,8 +60,7 @@ public class Config {
     }
 
     public static void main(String[] args) {
-        String path = "./data/app.properties";
-        System.out.println(new Config(path));
+        System.out.println(new Config("app.properties"));
 
     }
 }
