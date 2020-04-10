@@ -37,7 +37,7 @@ public class LogFilterBuffer {
                 new BufferedOutputStream(
                         new FileOutputStream("404.txt")
                 ))) {
-            out.write(String.valueOf(res));
+            out.println(res);
         } catch (Exception e) {
             e.printStackTrace();
         }

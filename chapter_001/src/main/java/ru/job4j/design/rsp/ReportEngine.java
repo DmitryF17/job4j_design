@@ -1,9 +1,6 @@
 package ru.job4j.design.rsp;
 
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.function.Predicate;
-import ru.job4j.design.rsp.MemStore;
 
 public class ReportEngine {
     private Store store;
@@ -32,5 +29,4 @@ public class ReportEngine {
         }
         return text.toString();
     }
-
 }

@@ -52,13 +52,13 @@ public class Analizy {
      * @param args
      */
     public static void main(String[] args) {
-        try (PrintWriter out = new PrintWriter(new FileOutputStream("unavailable.csv"))) {
-            out.write("200 10:56:01\n"
-                    + "500 10:57:01\n"
-                    + "400 10:58:01\n"
-                    + "200 10:59:01\n"
-                    + "500 11:01:02\n"
-                    + "200 11:02:02");
+        try (PrintWriter out = new PrintWriter(new FileOutputStream("./data/unavailable.csv"))) {
+            out.write("200 10:56:01/n"
+                    + "500 10:57:01/n"
+                    + "400 10:58:01/n"
+                    + "200 10:59:01/n"
+                    + "500 11:01:02/n"
+                    + "200 11:02:02/n");
         } catch (Exception e) {
             e.printStackTrace();
         }
