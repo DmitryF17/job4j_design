@@ -1,8 +1,6 @@
 package ru.job4j.io;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * file conversion.
@@ -49,17 +47,17 @@ public class Analizy {
      * @param args
      */
     public static void main(String[] args) {
-        try (PrintWriter out = new PrintWriter(new FileOutputStream("./data/unavailable.csv"))) {
-            out.write("200 10:56:01/n"
-                    + "500 10:57:01/n"
-                    + "400 10:58:01/n"
-                    + "200 10:59:01/n"
-                    + "500 11:01:02/n"
-                    + "200 11:02:02/n");
+        try (PrintWriter out = new PrintWriter(new FileOutputStream("chapter_001/unavailable.csv"))) {
+            out.write("200 10:56:01" + System.lineSeparator()
+                    + "500 10:57:01" + System.lineSeparator()
+                    + "400 10:58:01" + System.lineSeparator()
+                    + "200 10:59:01" + System.lineSeparator()
+                    + "500 11:01:02" + System.lineSeparator()
+                    + "200 11:02:02");
         } catch (Exception e) {
             e.printStackTrace();
         }
-        new Analizy().unavailable("./data/unavailable.csv", "./data/res.csv");
+        new Analizy().unavailable("chapter_001/unavailable.csv", "chapter_001/res.csv");
     }
 }
 
