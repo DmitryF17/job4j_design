@@ -23,13 +23,11 @@ public class Analizy {
     public void unavailable(String source, String target) {
         try (BufferedReader in = new BufferedReader(new FileReader(source))) {
             PrintWriter out = new PrintWriter(new FileOutputStream(target));
-            List<String> lines = new ArrayList<>();
-            in.lines().forEach(lines::add);
             boolean check = false;
-            for (int ind = 0; ind < lines.size() - 1; ind++) {
-                String[] lin = lines.get(ind).split(" ");
-                String[] lin1 = lines.get(ind + 1).split(" ");
-
+            while (in.ready()) {
+                String line = in.readLine();
+                String[] lin = line.split(" ");
+                String[] lin1 = line.split(" ");
                 if (!check & (lin[0].equals("400") || lin[0].equals("500"))) {
                     out.print((lin[1]) + " ; ");
                     check = true;
@@ -38,14 +36,13 @@ public class Analizy {
                     out.println(lin1[1]);
                     check = false;
                 }
-
             }
-
             out.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
     /**
      * create source file.
      *
