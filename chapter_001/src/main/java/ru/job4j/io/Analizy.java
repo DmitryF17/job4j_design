@@ -18,7 +18,7 @@ public class Analizy {
      * @param source
      * @param target
      */
-    public void unavailable(String source, String target) {
+    public static void unavailable(String source, String target) {
         try (BufferedReader in = new BufferedReader(new FileReader(source))) {
             PrintWriter out = new PrintWriter(new FileOutputStream(target));
             boolean check = false;
