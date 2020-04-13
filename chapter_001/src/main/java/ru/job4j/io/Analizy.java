@@ -20,7 +20,7 @@ public class Analizy {
      */
     public static void unavailable(String source, String target) {
         try (BufferedReader in = new BufferedReader(new FileReader(source))) {
-            PrintWriter out = new PrintWriter(new FileOutputStream(target));
+            PrintWriter out = new PrintWriter(new BufferedOutputStream(new FileOutputStream(target)));
             boolean check = false;
             while (in.ready()) {
                 String line = in.readLine();
