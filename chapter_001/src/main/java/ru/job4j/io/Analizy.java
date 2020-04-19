@@ -1,6 +1,9 @@
 package ru.job4j.io;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringJoiner;
 
 /**
  * file conversion.
@@ -18,24 +21,23 @@ public class Analizy {
      * @param source
      * @param target
      */
-    public static void unavailable(String source, String target) {
-        try (BufferedReader in = new BufferedReader(new FileReader(source))) {
-            PrintWriter out = new PrintWriter(new BufferedOutputStream(new FileOutputStream(target)));
+    public void unavailable(String source, String target) {
+        List<String> res = new ArrayList<>();
+        try (BufferedReader in = new BufferedReader(new FileReader(source));
+             PrintWriter out = new PrintWriter(new BufferedOutputStream(new FileOutputStream(target)))) {
             boolean check = false;
             while (in.ready()) {
                 String line = in.readLine();
-                String[] lin = line.split(" ");
-                String[] lin1 = line.split(" ");
-                if (!check & (lin[0].equals("400") || lin[0].equals("500"))) {
-                    out.print((lin[1]) + " ; ");
+                if (!check & (line.startsWith("400") || line.startsWith("500"))) {
+                    res.add((line.substring(4) + " ; "));
                     check = true;
                 }
-                if (check & (lin1[0].equals("200") || lin1[0].equals("300"))) {
-                    out.println(lin1[1]);
+                if (check & (line.startsWith("200") || line.startsWith("300"))) {
+                    res.add(line.substring(4) + System.lineSeparator());
                     check = false;
                 }
             }
-            out.close();
+            res.forEach(out::print);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -47,19 +49,23 @@ public class Analizy {
      * @param args
      */
     public static void main(String[] args) {
+        StringJoiner text = new StringJoiner(System.lineSeparator());
+        text.add("200 10:56:01")
+                .add("500 10:57:01")
+                .add("400 10:58:01")
+                .add("200 10:59:01")
+                .add("500 11:01:02")
+                .add("200 11:02:02");
         try (PrintWriter out = new PrintWriter(new FileOutputStream("chapter_001/unavailable.csv"))) {
-            out.write("200 10:56:01" + System.lineSeparator()
-                    + "500 10:57:01" + System.lineSeparator()
-                    + "400 10:58:01" + System.lineSeparator()
-                    + "200 10:59:01" + System.lineSeparator()
-                    + "500 11:01:02" + System.lineSeparator()
-                    + "200 11:02:02");
+            out.write(text.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
         new Analizy().unavailable("chapter_001/unavailable.csv", "chapter_001/res.csv");
     }
 }
+
+
 
 
 

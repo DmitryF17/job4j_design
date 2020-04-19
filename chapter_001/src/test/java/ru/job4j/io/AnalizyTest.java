@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 
 import java.io.*;
+import java.util.StringJoiner;
 
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.Is.is;
@@ -18,17 +19,19 @@ public class AnalizyTest {
     public void unavaibleTest() throws IOException {
         File target = folder.newFile("res.csv");
         File source = folder.newFile("unavailable.csv");
+        StringJoiner text = new StringJoiner(System.lineSeparator());
+        text.add("200 10:56:01")
+                .add("500 10:57:01")
+                .add("400 10:58:01")
+                .add("200 10:59:01")
+                .add("500 11:01:02")
+                .add("200 11:02:02");
         try (PrintWriter out = new PrintWriter(new FileOutputStream(source))) {
-            out.write("200 10:56:01" + System.lineSeparator()
-                    + "500 10:57:01" + System.lineSeparator()
-                    + "400 10:58:01" + System.lineSeparator()
-                    + "200 10:59:01" + System.lineSeparator()
-                    + "500 11:01:02" + System.lineSeparator()
-                    + "200 11:02:02");
+            out.write(text.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Analizy.unavailable(source.getAbsolutePath(), target.getAbsolutePath());
+        new Analizy().unavailable(source.getAbsolutePath(), target.getAbsolutePath());
         try (BufferedReader read = new BufferedReader(new FileReader(target))
         ) {
             assertThat(read.readLine(), is("10:57:01 ; 10:59:01"));
