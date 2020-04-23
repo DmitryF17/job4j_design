@@ -8,7 +8,21 @@
 </file>
 <file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\design\rsp\Store.java">
 </file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\io\Analizy.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\io\Config.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\io\Dir.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\io\EvenNumberFile.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\io\LogFilter.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\io\LogFilterBuffer.java">
+</file>
 <file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\io\Multiple.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\io\ReadFile.java">
 </file>
 <file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\io\ResultFile.java">
 </file>
@@ -35,6 +49,10 @@
 <file name="C:\projects\job4j_design\chapter_001\src\main\java\ru\job4j\template\GeneratorR.java">
 </file>
 <file name="C:\projects\job4j_design\chapter_001\src\test\java\ru\job4j\design\rsp\ReportEngineTest.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\test\java\ru\job4j\io\AnalizyTest.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_001\src\test\java\ru\job4j\io\ConfigTest.java">
 </file>
 <file name="C:\projects\job4j_design\chapter_001\src\test\java\ru\job4j\kiss\MaxMinTest.java">
 </file>

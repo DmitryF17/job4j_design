@@ -5,7 +5,7 @@ import java.util.List;
 
 public class MaxMin {
 
-    Integer findMaxMin(List<Integer> value, Comparator<Integer> comparator) {
+   public Integer findMaxMin(List<Integer> value, Comparator<Integer> comparator) {
         Integer rsl = value.get(0);
         for (Integer val : value) {
             if (comparator.compare(val, rsl) > 0) {

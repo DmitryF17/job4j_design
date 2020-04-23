@@ -5,8 +5,9 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import org.hamcrest.core.Is;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
-
+@Ignore
 public class TemplateTest {
     public TemplateTest() {
     }
