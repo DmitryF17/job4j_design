@@ -10,8 +10,9 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 import java.util.NoSuchElementException;
-@Ignore
+
 public class CinemaTest {
+    @Ignore
     @Test
     public void buy() {
         Account account = new AccountCinema();
@@ -20,7 +21,7 @@ public class CinemaTest {
         Ticket ticket = new Cinema3D().buy(account, 1, 1, date);
         assertThat(ticket, is(new Ticket3D()));
     }
-
+    @Ignore
     @Test
     public void find() {
         Cinema cinema = new Cinema3D();
@@ -28,7 +29,7 @@ public class CinemaTest {
         List<Session> sessions = cinema.find(session -> true);
         assertThat(sessions, is(Arrays.asList(new Session3D())));
     }
-
+    @Ignore
     @Test
     public void add() {
         Cinema cinema = new Cinema3D();
@@ -36,7 +37,7 @@ public class CinemaTest {
         cinema.add(new Session3D());
         assertThat(session, is(Arrays.asList(new Session3D())));
     }
-
+    @Ignore
     @Test(expected = IllegalArgumentException.class)
     public void whenExceptionRow() {
         Account account = new AccountCinema();
@@ -44,7 +45,7 @@ public class CinemaTest {
         date.set(2020, 10, 10, 23, 00);
         Ticket ticket = new Cinema3D().buy(account, 0, 1, date);
     }
-
+    @Ignore
     @Test(expected = NoSuchElementException.class)
     public void findNotSession() {
         Cinema cinema = new Cinema3D();

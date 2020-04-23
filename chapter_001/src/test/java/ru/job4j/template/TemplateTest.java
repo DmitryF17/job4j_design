@@ -7,11 +7,11 @@ import org.hamcrest.core.Is;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
-@Ignore
+
 public class TemplateTest {
     public TemplateTest() {
     }
-
+    @Ignore
     @Test
     public void templTest() {
         String temp = "I am ${name}, Who are ${subject}?";
@@ -20,7 +20,7 @@ public class TemplateTest {
         res.put("subject", "you");
         Assert.assertThat((new GeneratorR()).produce(temp, res), Is.is("I am Dmitrii, Who are you"));
     }
-
+    @Ignore
     @Test(
             expected = NoSuchElementException.class
     )
@@ -30,7 +30,7 @@ public class TemplateTest {
         res.put(null, "Oleg");
         (new GeneratorR()).produce(temp, res);
     }
-
+    @Ignore
     @Test(
             expected = IllegalArgumentException.class
     )
