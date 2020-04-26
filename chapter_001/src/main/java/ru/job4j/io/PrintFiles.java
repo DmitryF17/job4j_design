@@ -11,7 +11,14 @@ import java.util.List;
 import static java.nio.file.FileVisitResult.CONTINUE;
 
 public class PrintFiles implements FileVisitor<Path> {
-    static List<String> res = new ArrayList<>();
+
+    private String ext;
+
+    private static List<String> res = new ArrayList<>();
+
+    PrintFiles(String ext) {
+        this.ext = ext;
+    }
 
     @Override
     public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
@@ -20,7 +27,9 @@ public class PrintFiles implements FileVisitor<Path> {
 
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-        res.add(file.toAbsolutePath().toString());
+        if (file.toString().endsWith(ext)) {
+            res.add(file.toAbsolutePath().toString());
+        }
         return CONTINUE;
     }
 
@@ -34,9 +43,7 @@ public class PrintFiles implements FileVisitor<Path> {
         return CONTINUE;
     }
 
-    static List<String> result(String ext) {
-        List<String> result = new ArrayList<>();
-        res.stream().filter(el -> el.endsWith(ext)).forEach(result::add);
-        return result;
+    List<String> result() {
+        return res;
     }
 }
