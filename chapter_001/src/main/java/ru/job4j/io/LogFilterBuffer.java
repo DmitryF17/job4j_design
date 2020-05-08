@@ -38,10 +38,10 @@ public class LogFilterBuffer {
      *
      * @param res
      */
-    public static void save(List<String> res) {
+    public static void save(List<String> res, String file) {
         try (PrintWriter out = new PrintWriter(
                 new BufferedOutputStream(
-                        new FileOutputStream("404.txt")
+                        new FileOutputStream(file)
                 ))) {
             out.println(res);
         } catch (Exception e) {
@@ -60,7 +60,7 @@ public class LogFilterBuffer {
         List<String> log = filter("log.txt");
         if (!log.isEmpty()) {
             System.out.println(log);
-            save(log);
+            save(log, "404.txt");
         }
     }
 }
