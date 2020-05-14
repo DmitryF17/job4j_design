@@ -27,7 +27,7 @@ public class PrintFiles implements FileVisitor<Path> {
 
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-        if (file.toString().endsWith(ext)) {
+        if (!file.toString().endsWith(ext)) {
             res.add(file.toAbsolutePath().toString());
         }
         return CONTINUE;
