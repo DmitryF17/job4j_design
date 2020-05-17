@@ -74,3 +74,6 @@ build
 /even.txt
 /input.txt
 /log.txt
+/chapter_001/target/
+/.idea/
+/target/
