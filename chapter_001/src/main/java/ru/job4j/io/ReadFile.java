@@ -2,7 +2,6 @@ package ru.job4j.io;
 
 import java.io.FileInputStream;
 
-
 public class ReadFile {
     public static void main(String[] args) {
         try (FileInputStream in = new FileInputStream("input.txt")) {

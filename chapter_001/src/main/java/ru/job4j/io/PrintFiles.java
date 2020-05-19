@@ -7,17 +7,18 @@ import java.nio.file.Path;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 import static java.nio.file.FileVisitResult.CONTINUE;
 
 public class PrintFiles implements FileVisitor<Path> {
 
-    private String ext;
+    private Predicate<Path> pathPredicate;
 
-    private static List<String> res = new ArrayList<>();
+    private static List<Path> res = new ArrayList<>();
 
-    PrintFiles(String ext) {
-        this.ext = ext;
+    PrintFiles(Predicate<Path> pathPredicate) {
+        this.pathPredicate = pathPredicate;
     }
 
     @Override
@@ -27,8 +28,8 @@ public class PrintFiles implements FileVisitor<Path> {
 
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-        if (!file.toString().endsWith(ext)) {
-            res.add(file.toAbsolutePath().toString());
+        if (pathPredicate.test(file)) {
+            this.res.add(file);
         }
         return CONTINUE;
     }
@@ -43,7 +44,7 @@ public class PrintFiles implements FileVisitor<Path> {
         return CONTINUE;
     }
 
-    List<String> result() {
+    List<Path> getPath() {
         return res;
     }
 }
