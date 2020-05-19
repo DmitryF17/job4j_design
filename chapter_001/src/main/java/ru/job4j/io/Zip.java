@@ -1,14 +1,17 @@
 package ru.job4j.io;
 
 import java.io.*;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 public class Zip {
-    public void packFiles(List<File> sources, File target) {
+
+     void packFiles(List<File> sources, File target) {
         try (ZipOutputStream zip = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(target)))) {
             for (File file : sources) {
                 zip.putNextEntry(new ZipEntry(file.getPath()));
@@ -21,12 +24,17 @@ public class Zip {
         }
     }
 
-    public static void main(String[] args) throws IOException {
+    static List<File> searcher(String[] args) throws IOException {
+        List<File> out = new ArrayList<>();
         Argzip argsZip = new Argzip(args);
         if (argsZip.valid()) {
-            List<String> direct = Search.search(Paths.get(argsZip.directory()), argsZip.exclude());
-            List<File> out = direct.stream().map(File::new).collect(Collectors.toList());
-            new Zip().packFiles(out, new File(argsZip.output()));
+            List<Path> direct = Search.search(Paths.get(argsZip.directory()), argsZip.exclude());
+            out = direct.stream().map(Path::toFile).collect(Collectors.toList());
         }
+        return out;
     }
+    public static void main(String[] args) throws IOException {
+            new Zip().packFiles(searcher(args), new File(new Argzip(args).output()));
+        }
+
 }
