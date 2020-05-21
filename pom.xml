@@ -8,6 +8,16 @@
     <artifactId>job4j_design</artifactId>
     <packaging>pom</packaging>
     <version>3.0</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+    </dependencies>
+
+
     <modules>
         <module>chapter_001</module>
         <module>chapter_002</module>
