@@ -16,10 +16,11 @@ public class EchoServer {
                     String str;
                     while (!(str = in.readLine()).isEmpty()) {
                         System.out.println(str);
-                        if (in.readLine().equals("http://localhost:9000/?msg=Bye")) {
-                            order = false;
-                            break;
-                        }
+
+                    }
+                    if (in.readLine().equals("http://localhost:9000/?msg=Bye")) {
+                        order = false;
+                        break;
                     }
                     out.write("HTTP/1.1 200 OK\r\n\\".getBytes());
                 }
