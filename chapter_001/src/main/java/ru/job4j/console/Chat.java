@@ -1,39 +1,51 @@
 package ru.job4j.console;
 
-public class Chat {
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-    static void chat() {
-        System.out.print("Поговорим?");
+public class Chat {
+    private static final String Stop = "стоп";
+    private static final String Continue = "продолжить";
+    private static final String End = "закончить";
+    private static List<String> chat = new ArrayList<>();
+
+    static void chat() throws IOException {
+        var ans = new ChatAnswer().answer();
         boolean order = true;
         boolean search = true;
+        System.out.print("Поговорим?");
         do {
-            String name = new ConsoleInput().ask();
-            TextLog.search(name);
-            switch (name) {
-                case "стоп":
+            String question = new ConsoleInput().ask();
+            chat.add(question);
+            switch (question) {
+                case Stop:
                     search = false;
                     order = true;
                     break;
-                case "продолжить":
+                case Continue:
                     search = true;
                     order = true;
                     break;
-                case "закончить":
+                case End:
                     search = false;
                     order = false;
                     break;
                 default:
             }
             if (search) {
-                var ans = new ChatAnswer().answer();
-                System.out.println(ans);
-                TextLog.search(ans);
+                Collections.shuffle(ans);
+                var answer = ans.get(0);
+                chat.add(answer);
+                System.out.println(answer);
             }
-
+            chat.add(System.lineSeparator());
         } while (order);
+        TextLog.search(chat);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Chat.chat();
     }
 }
