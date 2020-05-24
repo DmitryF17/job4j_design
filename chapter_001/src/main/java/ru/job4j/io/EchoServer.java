@@ -6,8 +6,9 @@ import java.net.Socket;
 
 public class EchoServer {
     public static void main(String[] args) throws IOException {
+
         try (ServerSocket server = new ServerSocket(9000)) {
-            var order = true;
+            boolean order = true;
             while (order) {
                 Socket socket = server.accept();
                 try (OutputStream out = socket.getOutputStream();
@@ -16,11 +17,9 @@ public class EchoServer {
                     String str;
                     while (!(str = in.readLine()).isEmpty()) {
                         System.out.println(str);
-
-                    }
-                    if (in.readLine().equals("http://localhost:9000/?msg=Bye")) {
-                        order = false;
-                        break;
+                        if (str.contains("Bye")) {
+                            order = false;
+                        }
                     }
                     out.write("HTTP/1.1 200 OK\r\n\\".getBytes());
                 }
