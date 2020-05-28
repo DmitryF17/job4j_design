@@ -6,12 +6,12 @@ import java.util.Collections;
 import java.util.List;
 
 public class Chat {
-    private static final String Stop = "стоп";
-    private static final String Continue = "продолжить";
-    private static final String End = "закончить";
+    private static final String STOP = "стоп";
+    private static final String CONTINUE = "продолжить";
+    private static final String END = "закончить";
     private static List<String> chat = new ArrayList<>();
 
-    static void chat() throws IOException {
+    private static void chat() throws IOException {
         var ans = new ChatAnswer().answer();
         boolean order = true;
         boolean search = true;
@@ -20,15 +20,15 @@ public class Chat {
             String question = new ConsoleInput().ask();
             chat.add(question);
             switch (question) {
-                case Stop:
+                case STOP:
                     search = false;
                     order = true;
                     break;
-                case Continue:
+                case CONTINUE:
                     search = true;
                     order = true;
                     break;
-                case End:
+                case END:
                     search = false;
                     order = false;
                     break;
