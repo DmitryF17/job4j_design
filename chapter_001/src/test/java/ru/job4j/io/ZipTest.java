@@ -33,7 +33,7 @@ public class ZipTest {
                 e.printStackTrace();
             }
 
-            var args = new String[]{"pom.xml", "txt", "pom.zip"};
+            var args = new String[]{"-d", "pom.xml", "-e", "txt", "-o", "pom.zip"};
             new Zip().packFiles(new Zip().searcher(args), new File(new Argzip(args).output()));
 
             try (ZipInputStream outp = new ZipInputStream((new FileInputStream(target)))) {
