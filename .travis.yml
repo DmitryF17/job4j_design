@@ -21,5 +21,3 @@ notifications:
 env:
   global:
     - CODECOV_TOKEN="38e0faf8-31b7-4384-ad53-285f4a278bdd"
-
-  bash <(curl -s https://codecov.io/bash) -t token
