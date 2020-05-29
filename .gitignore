@@ -79,3 +79,5 @@ build
 /target/
 '.idea' 
 '*.iml' 
+/textlog.txt
+/chapter_001/pom.zip
