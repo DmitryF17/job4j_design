@@ -20,8 +20,8 @@ public class UsageLog4j {
         double coursedone = 0.33;
         boolean understandenglish = true;
 
-        LOG.debug("User info name : {}, age : {}, gender : {}, weight : {}, height : {}," +
-                        " understand english : {}, pulse : {}, course done : {}, year in the course : {}",
+        LOG.debug("User info name : {}, age : {}, gender : {}, weight : {}, height : {},"
+                       + " understand english : {}, pulse : {}, course done : {}, year in the course : {}",
                 name, age, gender, weight, height, understandenglish, pulse, coursedone, yearinthecourse);
 
     }
