@@ -39,6 +39,7 @@ public class EchoServer {
                     }
                 }
             }
+
         } catch (Exception e) {
             LOG.error("Exception in log example", e);
         }
