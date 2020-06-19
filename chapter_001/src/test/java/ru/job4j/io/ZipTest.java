@@ -3,6 +3,8 @@ package ru.job4j.io;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
+import ru.job4j.zip.Argzip;
+import ru.job4j.zip.Zip;
 
 import java.io.*;
 import java.util.StringJoiner;

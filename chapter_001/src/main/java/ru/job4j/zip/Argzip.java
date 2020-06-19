@@ -1,9 +1,9 @@
-package ru.job4j.io;
+package ru.job4j.zip;
 
 public class Argzip {
     private String[] args;
 
-    Argzip(String[] args) {
+    public Argzip(String[] args) {
         this.args = args;
     }
 

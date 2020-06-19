@@ -1,4 +1,4 @@
-package ru.job4j.io;
+package ru.job4j.zip;
 
 import java.io.*;
 import java.nio.file.Path;
@@ -11,7 +11,7 @@ import java.util.zip.ZipOutputStream;
 
 public class Zip {
 
-     void packFiles(List<File> sources, File target) {
+     public void packFiles(List<File> sources, File target) {
         try (ZipOutputStream zip = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(target)))) {
             for (File file : sources) {
                 zip.putNextEntry(new ZipEntry(file.getPath()));
@@ -24,7 +24,7 @@ public class Zip {
         }
     }
 
-    static List<File> searcher(String[] args) throws IOException {
+    public static List<File> searcher(String[] args) throws IOException {
         List<File> out = new ArrayList<>();
         Argzip argsZip = new Argzip(args);
         if (argsZip.valid()) {
