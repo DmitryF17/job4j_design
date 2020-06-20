@@ -14,6 +14,7 @@ public class EvenIterator implements Iterator<Integer> {
     }
 
     private int[] haseven() {
+        evennum = new int[]{};
         int index = 0;
         for (int even : numbers) {
             if (even % 2 == 0) {
