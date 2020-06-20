@@ -1,6 +1,5 @@
 package ru.job4.it;
 
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -15,7 +14,13 @@ public class EvenIterator implements Iterator<Integer> {
     }
 
     private int[] haseven() {
-        return Arrays.stream(numbers).filter(el -> el % 2 == 0).toArray();
+        int index = 0;
+        for (int even : numbers) {
+            if (even % 2 == 0) {
+                evennum[index++] = even;
+            }
+        }
+        return evennum;
     }
 
     @Override
