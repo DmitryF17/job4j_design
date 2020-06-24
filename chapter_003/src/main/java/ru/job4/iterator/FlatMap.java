@@ -1,4 +1,4 @@
-package ru.job4.it;
+package ru.job4.iterator;
 
 import java.util.Collections;
 import java.util.Iterator;

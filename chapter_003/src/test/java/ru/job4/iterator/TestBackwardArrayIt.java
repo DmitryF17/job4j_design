@@ -1,6 +1,7 @@
-package ru.job4.it;
+package ru.job4.iterator;
 
 import org.junit.Test;
+import ru.job4.iterator.BackwardArrayIt;
 
 import java.util.NoSuchElementException;
 

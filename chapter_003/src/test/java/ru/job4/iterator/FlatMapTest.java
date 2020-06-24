@@ -1,4 +1,4 @@
-package ru.job4.it;
+package ru.job4.iterator;
 
 import org.junit.Test;
 
@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-import static org.hamcrest.Matchers.is;
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class FlatMapTest {

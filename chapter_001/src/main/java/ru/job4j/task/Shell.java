@@ -1,30 +1,30 @@
 package ru.job4j.task;
 
+import java.util.Stack;
+
 public class Shell {
-    private String directory = "/";
+    private final Stack<String> dir = new Stack<>();
+
 
     Shell cd(final String path) {
         switch (path) {
             case "/":
             case "usr/..":
-                this.directory = "/";
-                break;
-            case "usr":
-            case "local":
-            case "../local":
-            case "./":
-                this.directory = "/usr/local";
+                dir.clear();
                 break;
             case "..":
-                this.directory = "/usr";
+                dir.pop();
+                break;
             case "//lib///":
-                this.directory = "/lib";
+                break;
             default:
+                System.out.println("не является внутренней или внешней командой, исполняемой программой или пакетным файлом.");
+                break;
         }
         return this;
     }
 
     public String path() {
-        return directory;
+        return dir.toString();
     }
 }
