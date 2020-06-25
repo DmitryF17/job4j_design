@@ -36,14 +36,12 @@ public class SimpleArray<T> implements Iterable<T> {
 
     public void remove(int indexremove) {
         Objects.checkIndex(indexremove, index);
-        for (int position = indexremove; position < object.length - 1; position++) {
-            this.object[position] = this.object[position + 1];
-        }
+        System.arraycopy(object, indexremove + 1 , object, indexremove, object.length - indexremove - 1);
     }
 
-    public T get(int index) {
-        Objects.checkIndex(0, object.length - 1);
-        return (T) this.object[index];
+    public T get(int indexget) {
+        Objects.checkIndex(0, index);
+        return (T) this.object[indexget];
     }
 
     @Override
