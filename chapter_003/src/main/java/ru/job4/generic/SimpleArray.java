@@ -40,7 +40,7 @@ public class SimpleArray<T> implements Iterable<T> {
     }
 
     public T get(int indexget) {
-        Objects.checkIndex(0, index);
+        Objects.checkIndex(indexget, index);
         return (T) this.object[indexget];
     }
 
