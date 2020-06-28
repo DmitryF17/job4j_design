@@ -1,6 +1,6 @@
 package ru.job4.generic;
 
-public class RoleStore<Role extends Base> implements Store<Role>{
+public class RoleStore<Role extends Base> implements Store<Role> {
 
     private final Store<Role> store = new MemStore<>();
 

@@ -2,11 +2,12 @@ package ru.job4.generic;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  * create universal storage
- *  author DmitryF17
- *  version 01
- *  since 27/06/2019
+ * author DmitryF17
+ * version 01
+ * since 27/06/2019
  */
 public final class MemStore<T extends Base> implements Store<T> {
 
@@ -19,9 +20,8 @@ public final class MemStore<T extends Base> implements Store<T> {
 
     @Override
     public boolean replace(String id, T model) {
-        T replaced = findById(id);
-        if (replaced != null) {
-            mem.set(mem.indexOf(replaced), model);
+        if (indexOf(id) != -1) {
+            mem.set(indexOf(id), model);
             return true;
         }
         return false;
@@ -29,9 +29,8 @@ public final class MemStore<T extends Base> implements Store<T> {
 
     @Override
     public boolean delete(String id) {
-        T deleted = findById(id);
-        if (deleted != null) {
-            mem.remove(deleted);
+        if (indexOf(id) != -1) {
+            mem.remove(indexOf(id));
             return true;
         }
         return false;
@@ -39,11 +38,20 @@ public final class MemStore<T extends Base> implements Store<T> {
 
     @Override
     public T findById(String id) {
-            for (T findout : mem) {
-                if (findout.getId().equals(id)) {
-                    return findout;
-                }
+        if (indexOf(id) == -1) {
+            return null;
+        }
+        return mem.get(indexOf(id));
+    }
+
+    private int indexOf(String id) {
+        int rsl = -1;
+        for (int index = 0; index != mem.size(); index++) {
+            if (mem.get(index).getId().equals(id)) {
+                rsl = index;
+                break;
             }
-        return null;
+        }
+        return rsl;
     }
 }
