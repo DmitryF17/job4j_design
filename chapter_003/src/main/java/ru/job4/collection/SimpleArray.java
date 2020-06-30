@@ -1,9 +1,6 @@
 package ru.job4.collection;
 
-import java.util.ConcurrentModificationException;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * resizable-array implementation
@@ -23,7 +20,7 @@ public class SimpleArray<T> implements Iterable<T> {
     private int modCount = 0;
     private int size = 10;
     private int index = 0;
-    private int iterindex = 0;
+
 
     public SimpleArray() {
         this.container = new Object[size];
@@ -36,8 +33,7 @@ public class SimpleArray<T> implements Iterable<T> {
 
     public void add(T model) {
         if (index >= size) {
-            size = size + 10;
-            this.container = new Object[size];
+            container = Arrays.copyOf(container, 2 * size);
         }
         modCount++;
         container[index++] = model;
@@ -45,15 +41,18 @@ public class SimpleArray<T> implements Iterable<T> {
 
     @Override
     public Iterator<T> iterator() {
-        int expectedModCount = modCount;
+
         return new Iterator<T>() {
+
+            private int cursor;
+            private int expectedModCount = modCount;
 
             @Override
             public boolean hasNext() {
                 if (expectedModCount != modCount) {
                     throw new ConcurrentModificationException();
                 }
-                return iterindex < index;
+                return cursor < index;
             }
 
             @Override
@@ -61,10 +60,7 @@ public class SimpleArray<T> implements Iterable<T> {
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                if (expectedModCount != modCount) {
-                    throw new ConcurrentModificationException();
-                }
-                return (T) container[iterindex++];
+                return (T) container[cursor++];
             }
         };
     }
