@@ -32,9 +32,11 @@ public class Resizecontainer<E> implements Iterable<E> {
 
     public E get(int indexget) {
         Objects.checkIndex(indexget, size);
+        int position = 0;
         Node<E> node = first;
-        while (node.index != indexget) {
+        while (position != indexget) {
             node = node.next;
+            position++;
         }
         return node.value;
     }
@@ -70,12 +72,10 @@ public class Resizecontainer<E> implements Iterable<E> {
 
     private static class Node<E> {
         E value;
-        int index;
         Node<E> next;
 
          Node(E value, int index, Node<E> first) {
             this.value = value;
-            this.index = index;
             this.next = first;
         }
     }
