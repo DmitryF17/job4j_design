@@ -1,5 +1,7 @@
 package ru.job4.collection;
 
+import java.util.Iterator;
+
 public class SimpleStack<T> {
     private ForwardLinked<T> linked = new ForwardLinked<T>();
 
@@ -9,5 +11,9 @@ public class SimpleStack<T> {
 
     public void push(T value) {
         linked.add(value);
+    }
+
+    public Iterator<T> iterator() {
+        return linked.iterator();
     }
 }
