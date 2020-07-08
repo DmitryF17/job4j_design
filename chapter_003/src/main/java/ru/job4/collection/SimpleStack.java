@@ -13,6 +13,14 @@ public class SimpleStack<T> {
         linked.add(value);
     }
 
+    public boolean isEmpty() {
+        boolean res = true;
+        if (linked.iterator().hasNext()) {
+            res = false;
+        }
+        return res;
+    }
+
     public Iterator<T> iterator() {
         return linked.iterator();
     }

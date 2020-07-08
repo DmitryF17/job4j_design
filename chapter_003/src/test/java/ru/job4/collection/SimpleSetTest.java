@@ -51,16 +51,6 @@ public class SimpleSetTest {
         Iterator<String> it = set.iterator();
         it.next();
         it.next();
-
-    }
-    @Test(expected = NullPointerException.class)
-    public void whenAddNull() {
-        SimpleSet<String> set = new SimpleSet<>();
-        set.add(null);
-        set.add(null);
-        Iterator<String> it = set.iterator();
-        it.next();
-        it.next();
     }
 }
 
