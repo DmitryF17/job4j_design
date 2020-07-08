@@ -19,10 +19,7 @@ public class SimpleSet<T> extends SimpleArray<T> {
     public boolean checkduplicate(T model) {
         boolean noduplicate = true;
         for (int ind = 0; ind != index; ind++) {
-            if (get(ind) == null) {
-                throw new NullPointerException();
-            }
-            if (get(ind).equals(model)) {
+            if (Objects.equals(get(ind), model)) {
                 noduplicate = false;
                 break;
             }
