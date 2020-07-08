@@ -16,16 +16,23 @@ public class SimpleSet<T> extends SimpleArray<T> {
         return super.get(indexget);
     }
 
-    @Override
-    public void add(T model) {
-        boolean checkduplicate = true;
+    public boolean checkduplicate(T model) {
+        boolean noduplicate = true;
         for (int ind = 0; ind != index; ind++) {
+            if (get(ind) == null) {
+                throw new NullPointerException();
+            }
             if (get(ind).equals(model)) {
-                checkduplicate = false;
+                noduplicate = false;
                 break;
             }
         }
-        if (checkduplicate) {
+        return noduplicate;
+    }
+
+    @Override
+    public void add(T model) {
+        if (checkduplicate(model)) {
             super.add(model);
             index++;
             modCount++;
