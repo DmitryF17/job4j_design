@@ -1,9 +1,6 @@
 package ru.job4.collection;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class User {
     private String name;
@@ -15,6 +12,11 @@ public class User {
         this.children = children;
         this.birthday = birthday;
     }
+
+    public int hashCode() {
+        return Objects.hash(name, children, birthday);
+    }
+
 
     public static void main(String[] arge) {
         User first = new User("first", 1, new GregorianCalendar(2000, Calendar.JUNE, 23));
