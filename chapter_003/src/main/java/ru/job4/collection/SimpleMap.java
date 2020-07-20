@@ -28,7 +28,7 @@ public class SimpleMap<K, V> implements Iterable<K> {
         if (container[hash(key)] != null) {
             return false;
         }
-        if (index >= size) {
+        if (((float) index / size) > 0.75) {
             upsize();
         }
         int ind = hash(key);
@@ -38,6 +38,8 @@ public class SimpleMap<K, V> implements Iterable<K> {
             first = node;
             last = first;
             container[ind] = node;
+            modCount++;
+            index++;
             return true;
         } else {
             second = last;
@@ -67,10 +69,10 @@ public class SimpleMap<K, V> implements Iterable<K> {
         if (container[hash(key)] != null) {
             container[hash(key)] = null;
             res = true;
-            if (deletenode == first) {
+            if (deletenode.equals(first)) {
                 first = null;
             }
-            if (deletenode == last) {
+            if (deletenode.equals(last)) {
                 last = deletenode.previous;
                 last.next = null;
             } else {
