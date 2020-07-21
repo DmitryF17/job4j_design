@@ -32,8 +32,12 @@ public class User {
 
         User user = (User) o;
 
-        if (children != user.children) return false;
-        if (!Objects.equals(name, user.name)) return false;
+        if (children != user.children) {
+            return false;
+        }
+        if (!Objects.equals(name, user.name)) {
+            return false;
+        }
         return Objects.equals(birthday, user.birthday);
     }
 
