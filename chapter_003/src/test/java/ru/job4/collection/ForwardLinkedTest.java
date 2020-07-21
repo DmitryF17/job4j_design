@@ -16,7 +16,6 @@ public class ForwardLinkedTest {
         linked.add(1);
         linked.add(2);
         linked.deleteFirst();
-        linked.iterator().next();
         assertThat(linked.iterator().next(), is(2));
         }
 
