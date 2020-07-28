@@ -13,30 +13,40 @@ class Tree<E> implements SimpleTree<E> {
 
     @Override
     public boolean add(E parent, E child) {
-        boolean rsl = false;
         var adding = findBy(parent);
         if (adding.isPresent()) {
             if (!findBy(child).isPresent()) {
                 adding.get().children.add(new Node<>(child));
-                rsl = true;
+                return true;
             }
         }
-        return rsl;
+        return false;
     }
 
     @Override
     public Optional<Node<E>> findBy(E value) {
-        Optional<Node<E>> rsl = Optional.empty();
         Queue<Node<E>> data = new LinkedList<>();
         data.offer(this.root);
         while (!data.isEmpty()) {
             Node<E> el = data.poll();
             if (el.value.equals(value)) {
-                rsl = Optional.of(el);
-                break;
+               return Optional.of(el);
             }
             data.addAll(el.children);
         }
-        return rsl;
+        return  Optional.empty();
+    }
+
+    public boolean isBinary() {
+        Queue<Node<E>> data = new LinkedList<>();
+        data.offer(this.root);
+        while (!data.isEmpty()) {
+            Node<E> el = data.poll();
+            if (el.children.size() > 2) {
+                return false;
+            }
+            data.addAll(el.children);
+        }
+        return true;
     }
 }
