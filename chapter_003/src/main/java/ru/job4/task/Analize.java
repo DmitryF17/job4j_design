@@ -1,32 +1,29 @@
 package ru.job4.task;
 
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 class Analize {
 
-
     static Info diff(List<User> previous, List<User> current) {
-        Info info = new Info();
-        info.added = previous.size();
-        info.deleted = previous.size() - current.size();
-        info.changed = change(previous, current);
-        return info;
-    }
-
-    private static int change(List<User> previous, List<User> current) {
-        int ch = 0;
-        for (User usercurrent : current) {
-            int idcurrent = usercurrent.id;
-            String namecurrent = usercurrent.name;
-            for (User userprevious : previous) {
-                int idprevious = userprevious.id;
-                String nameprevious = userprevious.name;
-                if (idcurrent == idprevious & !namecurrent.equals(nameprevious)) {
-                    ch++;
-                }
+        int changedelement = 0;
+        int deletedelement = 0;
+        Map<Integer, User> mapForCountChange = previous.stream().collect(Collectors.toMap(User::getId, user -> user));
+        for (User currentuser : current) {
+            int currentuserkey = currentuser.id;
+            if (!mapForCountChange.containsKey(currentuserkey)) {
+                deletedelement++;
+            }
+            if (mapForCountChange.containsKey(currentuserkey) & currentuser.equals(mapForCountChange.get(currentuserkey))) {
+                changedelement++;
             }
         }
-        return ch;
+        Info info = new Info();
+        info.changed = changedelement;
+        info.added = current.size() + deletedelement - previous.size();
+        info.deleted = deletedelement;
+        return info;
     }
 
     static class User {
@@ -37,6 +34,10 @@ class Analize {
             this.id = id;
             this.name = name;
         }
+
+        int getId() {
+            return id;
+        }
     }
 
     static class Info {
@@ -45,3 +46,5 @@ class Analize {
         int deleted;
     }
 }
+
+
