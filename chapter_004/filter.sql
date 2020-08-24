@@ -1,5 +1,5 @@
-	DROP TABLE type CASCADE ;
-	DROP TABLE product ;
+	DROP TABLE type CASCADE;
+	DROP TABLE product;
 
 	CREATE TABLE type (
 	id varchar (3) PRIMARY KEY,
@@ -41,8 +41,10 @@
 		   WHERE name
 		   LIKE '%мороженое%';
 
-		   SELECT * FROM product
-		   WHERE extract('mon' FROM product.expired_date) = extract('mon' FROM current_date) + 1;
+		   SELECT p.name,p.expired_date
+		   FROM product p
+		   WHERE
+		   extract('month' FROM p.expired_date) = extract('month' FROM current_date + interval '1 month');
 
 		   SELECT *
 		   FROM product p
