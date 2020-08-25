@@ -17,9 +17,9 @@ model varchar UNIQUE
 );
 CREATE TABLE cars (
 model varchar,
-car_body varchar REFERENCES car_body(model),
-engine varchar REFERENCES engine(model),	
-transmission varchar REFERENCES transmission(model)
+car_body varchar REFERENCES car_body(id),
+engine varchar REFERENCES engine(id),	
+transmission varchar REFERENCES transmission(id)
 );
 	
 INSERT INTO car_body 
@@ -35,23 +35,23 @@ VALUES ('001','AUTOMAT'),
        ('002','ROBOT'),
 	   ('003','HANDLE');	   
 INSERT INTO cars 
-VALUES ('FORD','CABRIOLET','ENGINEFORD','AUTOMAT'),
-       ('SHEVROLET','SEDAN','ENGINESHEVRPLET','ROBOT'),
-       ('LADA','UNIVERSAL','ENGINELADA','HANDLE');
+VALUES ('FORD','001','001','001'),
+       ('SHEVROLET','002','002','002'),
+       ('LADA','003','003','003');
 	   
 SELECT * FROM cars;
 
-SELECT cars.model,cb.model AS notused_car_body
+SELECT cb.model AS notused_car_body
 FROM car_body cb
-LEFT OUTER JOIN cars ON cb.model<>cars.car_body
-ORDER BY cars.model;
+LEFT OUTER JOIN cars c ON cb.id = c.car_body 
+WHERE c.model IS NULL;
 
-SELECT cars.model,e.model AS notused_engine
+SELECT e.model AS notused_engine
 FROM engine e
-LEFT OUTER JOIN cars ON e.model<>cars.engine
-ORDER BY cars.model;
+LEFT OUTER JOIN cars c ON e.id = c.car_body
+WHERE c.model IS NULL;
 
-SELECT cars.model,t.model AS notused_transmission
+SELECT t.model AS notused_transmission
 FROM transmission t
-LEFT OUTER JOIN cars ON t.model<>cars.transmission
-ORDER BY cars.model;
+LEFT OUTER JOIN cars c ON t.id = c.transmission
+WHERE c.model IS NULL;
