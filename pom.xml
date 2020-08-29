@@ -38,7 +38,6 @@
 
     <build>
         <plugins>
-
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -89,7 +88,6 @@
                     <target>12</target>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 </project>
