@@ -65,7 +65,7 @@ public class ImportDB {
         try (FileInputStream in = new FileInputStream("./app.properties")) {
             cfg.load(in);
         }
-        ImportDB db = new ImportDB(cfg, "./dump.txt");
+        ImportDB db = new ImportDB(cfg, "dump.txt");
         db.save(db.load());
     }
 }

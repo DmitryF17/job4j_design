@@ -1,3 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="6.11.2">
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\collection\ForwardLinked.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\collection\ForwardLinkedRevers.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\collection\Resizecontainer.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\collection\SimpleArray.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\collection\SimpleMap.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\collection\SimpleQueue.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\collection\SimpleSet.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\collection\SimpleStack.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\collection\User.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\generic\Base.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\generic\MemStore.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\generic\Role.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\generic\RoleStore.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\generic\SimpleArray.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\generic\Store.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\generic\User.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\generic\UserStore.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\iterator\BackwardArrayIt.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\iterator\EvenIterator.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\iterator\FlatMap.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\iterator\MatrixIt.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\task\Analize.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\task\Article.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\task\Comparemerge.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\task\FreezeStr.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\tree\SimpleTree.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\main\java\ru\job4\tree\Tree.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\test\java\ru\job4\collection\ForwardLinkedReversTest.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\test\java\ru\job4\collection\ForwardLinkedTest.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\test\java\ru\job4\collection\ResizecontainerTest.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\test\java\ru\job4\collection\SimpleArrayTest.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\test\java\ru\job4\collection\SimpleMapTest.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\test\java\ru\job4\collection\SimpleQueueTest.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\test\java\ru\job4\collection\SimpleSetTest.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\test\java\ru\job4\collection\SimpleStackTest.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\test\java\ru\job4\generic\SimpleArrayTest.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\test\java\ru\job4\generic\UserStoreTest.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\test\java\ru\job4\iterator\EvenIteratorTest.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\test\java\ru\job4\iterator\FlatMapTest.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\test\java\ru\job4\iterator\MatrixTest.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\test\java\ru\job4\iterator\TestBackwardArrayIt.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\test\java\ru\job4\task\AnalizeTest.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\test\java\ru\job4\task\ArticleTest.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\test\java\ru\job4\task\FreezeStrTest.java">
+</file>
+<file name="C:\projects\job4j_design\chapter_003\src\test\java\ru\job4\tree\TreeTest.java">
+</file>
 </checkstyle>
