@@ -42,6 +42,6 @@ SELECT c.name , count(c.name)
 FROM person AS p
 JOIN company AS c
 ON p.company_id = c.id
-GROUP BY c.name
-ORDER BY c.name
+GROUP BY c.id
+ORDER BY c.id DESC
 LIMIT 1;
