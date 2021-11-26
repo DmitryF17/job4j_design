@@ -1,15 +1,15 @@
-package ru.job4j.design.rsp;
+package ru.job4j.rsp;
 
 import java.util.Calendar;
 import java.util.Objects;
 
-public class Employer {
+public class Employee {
     private String name;
     private Calendar hired;
     private Calendar fired;
     private double salary;
 
-    public Employer(String name, Calendar hired, Calendar fired, double salary) {
+    public Employee(String name, Calendar hired, Calendar fired, double salary) {
         this.name = name;
         this.hired = hired;
         this.fired = fired;
@@ -56,7 +56,7 @@ public class Employer {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Employer employer = (Employer) obj;
+        Employee employer = (Employee) obj;
         return Objects.equals(name, employer.name);
     }
 
